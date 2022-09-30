@@ -1,13 +1,13 @@
 package com.epam.esm.service;
 
-import com.epam.esm.dto.response.BaseResponseDto;
+import com.epam.esm.dto.response.AppResponseDto;
 
-public interface BaseService<T> {
+public interface BaseService<T, R> {
 
-    BaseResponseDto create(T type);
+    AppResponseDto<R> create(T type);
 
-    BaseResponseDto get(Long id);
+    AppResponseDto<R> get(Long id);
 
-    BaseResponseDto delete(Long id);
+    AppResponseDto<Boolean> delete(Long id);
 
 }

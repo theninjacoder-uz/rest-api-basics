@@ -10,4 +10,6 @@ import java.util.List;
 public interface GiftCertificateModelMapper {
     GiftCertificateResponseDto toDto(GiftCertificate giftCertificate, List<Tag> tagList);
     GiftCertificate toEntity(GiftCertificateRequestDto requestDto);
+    GiftCertificate map(GiftCertificateRequestDto requestDto, GiftCertificate certificate);
+
 }

@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public interface BaseRepo<T> {
 
-    Optional<T> create (T t);
+    T create (T t);
 
     Optional<T> get(Long id);
 

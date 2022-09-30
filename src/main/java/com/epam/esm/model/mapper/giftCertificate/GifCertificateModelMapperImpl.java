@@ -31,8 +31,15 @@ public class GifCertificateModelMapperImpl implements GiftCertificateModelMapper
         giftCertificate.setPrice(requestDto.getPrice());
         giftCertificate.setDuration(requestDto.getDuration());
         giftCertificate.setDescription(requestDto.getDescription());
-        giftCertificate.setCreateDate(requestDto.getCreateDate());
-        giftCertificate.setLastUpdatedDate(requestDto.getLastUpdatedDate());
         return giftCertificate;
+    }
+
+    @Override
+    public GiftCertificate map(GiftCertificateRequestDto requestDto, GiftCertificate certificate) {
+        certificate.setName(requestDto.getName() != null ? requestDto.getName() : certificate.getName());
+        certificate.setDescription(requestDto.getDescription() != null ? requestDto.getDescription() : certificate.getDescription());
+        certificate.setDuration(requestDto.getDuration() != null ? requestDto.getDuration() : certificate.getDuration());
+        certificate.setPrice(requestDto.getPrice() != null ? requestDto.getPrice() : certificate.getPrice());
+        return certificate;
     }
 }
